@@ -1,13 +1,63 @@
-<html>
-
+<html lang="en">
 <head>
-  <title>Express</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" conetn="width=device-width, initial-scale=1.0">
+  <title>Temerature Tagged Clothes</title>
   <link rel="stylesheet" href="/stylesheets/style.css">
 </head>
 
 <body>
-  <h1>Express</h1>
-  <p>Welcome to Express</p>
-</body>
+  <h1>Upload an Image with a Temperture Tag</h1>
+  <form id="uploadForm" enctype="multipart/form-data">
+    <input type="file" name="image" required />
+    <select name="tag" required>
+      <option value="hot">Hot</option>
+      <option value="warm">Warm</option>
+      <option value="cool">Cool</option>
+      <option value="cold">Cold</option>
+    </select>
+    <button type="submit">Upload</button>
+  </form>
 
+  <h2>Retrieve Images by Tag</h2>
+  <select id="tagSelect">
+    <option value="hot">Hot</option>
+    <option value="warm">Warm</option>
+    <option value="cool">Cool</option>
+    <option value="cold">Cold</option>
+  </select>
+  <button onclick="fetchImages()">Get Images</button>
+
+  <div id="imageContainer"></div>
+
+  <script>
+    document.getElementById('uploadForm').addEventListener('submit', async function(event) {
+            event.preventDefault();
+            const formData = new FormData(this);
+            const response = await fetch('/upload', {
+                method: 'POST',
+                body: formData
+            });
+            const result = await response.json();
+            console.log(result);
+            alert('Image uploaded successfully!');
+            this.reset();
+        });
+
+        async function fetchImages() {
+            const tag = document.getElementById('tagSelect').value;
+            const response = await fetch(`/images?tag=${tag}`);
+            const images = await response.json();
+            const imageContainer = document.getElementById('imageContainer');
+            imageContainer.innerHTML = '';
+            images.forEach(image => {
+                const img = document.createElement('img');
+                img.src = `/uploads/${image.filename}`;
+                img.alt = image.tag;
+                img.style.width = '100px';
+                imageContainer.appendChild(img);
+            });
+        }
+  </script>
+</body>
 </html>
