@@ -3,7 +3,7 @@ import path from 'path';
 import cookieParser from 'cookie-parser';
 import logger from 'morgan';
 
-import usersRouter from './routes/users.js';
+//import usersRouter from './routes/users.js';
 import uploadRouter from './routes/upload.js';
 import apiRouter from './routes/weather.js';
 
@@ -22,7 +22,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
-app.use('/users', usersRouter);
+//app.use('/users', usersRouter);
 app.use('/', uploadRouter);
 
 app.get('/', (req, res) => {
