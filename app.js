@@ -5,6 +5,7 @@ import logger from 'morgan';
 
 import usersRouter from './routes/users.js';
 import uploadRouter from './routes/upload.js';
+import apiRouter from './routes/weather.js';
 
 import { fileURLToPath } from 'url';
 import { dirname, join } from 'path';
@@ -27,5 +28,6 @@ app.use('/', uploadRouter);
 app.get('/', (req, res) => {
     res.sendFile(join(__dirname, 'index.html'));
 });
+app.use('/api', apiRouter);
 
 export default app;

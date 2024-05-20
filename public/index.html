@@ -4,8 +4,8 @@
   <meta name="viewport" conetn="width=device-width, initial-scale=1.0">
   <title>Temerature Tagged Clothes</title>
   <link rel="stylesheet" href="/stylesheets/style.css">
+  <script src="javascripts/index.js" ></script>
 </head>
-
 <body>
   <h1>Upload an Image with a Temperture Tag</h1>
   <form id="uploadForm" enctype="multipart/form-data">
@@ -29,6 +29,10 @@
   <button onclick="fetchImages()">Get Images</button>
 
   <div id="imageContainer"></div>
+
+  <h1>Climate Closet</h1>
+  <button onclick="getWeather()">Click to get the current weather for Seattle!</button>
+  <div id="results"></div>
 
   <script>
     document.getElementById('uploadForm').addEventListener('submit', async function(event) {
