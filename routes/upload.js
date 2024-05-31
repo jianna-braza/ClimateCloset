@@ -52,4 +52,14 @@ router.get('/images', async (req, res) => {
     }
 });
 
+router.get('/all-clothing', async (req, res) => {
+    try {
+        const images = await Image.find().exec();
+        res.json(images);
+    } catch (err) {
+        console.error('Error fetching all clothing data:', err);
+        res.status(500).json({ error: err.message })
+    }
+})
+
 export default router;
