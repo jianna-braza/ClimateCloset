@@ -43,7 +43,7 @@ router.get('/weather', async (req, res, next) => {
             tempTag = "hot! Make sure to wear light layers!";
         }
 
-        htmlReturn = `<h2>The current temperature in Seattle is ${currentTemp} degrees Fahrenheit/${((currentTemp - 32) * (5 / 9)).toFixed(2)} degrees Celsius</h2>`;
+        htmlReturn = `<h2>The current temperature in Seattle is ${currentTemp} degrees Fahrenheit / ${((currentTemp - 32) * (5 / 9)).toFixed(2)} degrees Celsius</h2>`;
         htmlReturn += `<p>The current wind speed is ${currentWind} mph</p>`;
         htmlReturn += `<h3>Based on the data above, I think the temperature for today will be ${tempTag}</h3>`;
 

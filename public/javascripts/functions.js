@@ -52,3 +52,45 @@ async function fetchAllClothing() {
         console.error('Error fetching all clothing data:', error);
     }
 }
+
+/*
+async function fetchImagesByWeather() {
+    try {
+        // Fetch weather data from your API
+        const response = await fetch("/api/weather");
+        const weatherData = await response.json();
+        const { currentTemp } = weatherData;
+
+        // Determine clothing tag based on temperature
+        let clothingTag = '';
+        if (currentTemp < 25) {
+            clothingTag = "Cold";
+        } else if (currentTemp < 40) {
+            clothingTag = "Cold";
+        } else if (currentTemp < 60) {
+            clothingTag = "Cool";
+        } else if (currentTemp < 80) {
+            clothingTag = "Warm";
+        } else {
+            clothingTag = "Hot";
+        }
+
+        // Fetch clothing images based on clothing tag
+        const responseClothing = await fetch(`/api/images?tag=${clothingTag}`);
+        const clothingImages = await responseClothing.json();
+
+        // Display clothing images
+        const imageContainer = document.getElementById('imageContainer');
+        imageContainer.innerHTML = '';
+        clothingImages.forEach(image => {
+            const img = document.createElement('img');
+            img.src = `/uploads/${image.filename}`;
+            img.alt = image.tag;
+            img.style.width = '100px';
+            imageContainer.appendChild(img);
+        });
+    } catch (error) {
+        console.error('Error fetching clothing data based on weather:', error);
+    }
+}
+*/
