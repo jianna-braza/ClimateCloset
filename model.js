@@ -1,9 +1,18 @@
-// models/model.js
 import mongoose from 'mongoose';
+import dotenv from 'dotenv';
 
-await mongoose.connect("mongodb+srv://websharerUser:websharer@cluster-k-dot.kgz547p.mongodb.net/ClimateCloset", {
+dotenv.config();
+const MONGODB_URI = process.env.MONGODB_URI;
+
+
+await mongoose.connect(MONGODB_URI, {
   useNewUrlParser: true,
   useUnifiedTopology: true
+}).then(() => {
+  console.log('Connected to MongoDB');
+}).catch((error) => {
+  console.error('Error connecting to MongoDB:', error);
+  process.exit(1);
 });
 
 const imageSchema = new mongoose.Schema({

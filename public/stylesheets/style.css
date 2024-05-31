@@ -21,6 +21,21 @@ h1, #desc {
 }
 
 #weatherInfo {
-  background-color: black;
-  color: tan;
+  background-color: white;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+}
+
+nav li {
+  margin-right: 10px;
+}
+
+nav a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
 }
