@@ -18,6 +18,7 @@
       <a class="nav-link active" id="background-tab" data-bs-toggle="tab" href="#background" role="tab" aria-controls="background" aria-selected="true">Background</a>
       <a class="nav-link" id="weather-info-tab" data-bs-toggle="tab" href="#weather-info" role="tab" aria-controls="weather-info" aria-selected="false">Weather Info</a>
       <a class="nav-link" id="image-upload-tab" data-bs-toggle="tab" href="#image-upload" role="tab" aria-controls="image-upload" aria-selected="false">Add Clothing</a>
+      <a class="nav-link" id="find-clothing-tab" data-bs-toggle="tab" href="#find-clothing" role="tab" aria-controls="find-clothing" aria-selected="false">Find Clothing</a>
       <a class="nav-link" id="all-clothing-tab" data-bs-toggle="tab" href="#all-clothing" role="tab" aria-controls="all-clothing" aria-selected="false">All Clothing</a>
     </div>
   </nav>
@@ -59,6 +60,9 @@
         <button type="submit">Upload</button>
       </form>
 
+    </div>
+
+    <div class="tab-pane fade" id="find-clothing" role="tabpanel" aria-labelledby="find-clothing-tab">
       <h2>Retrieve Clothing by Tag</h2>
       <select id="tagSelect">
         <option value="hot">Hot</option>
@@ -70,6 +74,7 @@
 
       <div id="imageContainer"></div>
     </div>
+
     <div class="tab-pane fade" id="all-clothing" role="tabpanel" aria-labelledby="all-clothing-tab">
       <h2>All Clothing</h2>
       <button onclick="fetchAllClothing()">Retrieve All Clothing</button>
