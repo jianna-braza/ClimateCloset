@@ -24,7 +24,13 @@ ClimateCloset is a web application designed to help users organize their wardrob
 
 ## Next steps:
 
-1. User Authentication: Implement user authentication to allow users to create accounts and securely manage their wardrobe data.
+User Stories which still need to be addressed:
+- A user is able to create an account. Needs to be implemented with Azure Authentication
+- A user is able to edit or delete clothing items by an ID. Need to include ID or name of image when uploaded
+- A user can find recommendations of clothing to wear because of the weather data. Right now we only have this working with a given tag when stored in the database.
+- A user can learn more about the weather of surrounding areas.
+
+1. User Authentication: Implement user authentication to allow users to create accounts and securely manage their wardrobe data. By using Azure services we would also be able to have this live and running.
 2. Enhanced Image Management: Add features for users to edit, delete, and categorize uploaded images for better organizations. Considering the feature for taking live photos of items and uploading.
 3. User Interface Improvements: Refine and improve the frontend interface for a more intuitive and visually appealing user experience.
 4. Testing: Conduct testing to identify and fix any bugs or performance issues.
